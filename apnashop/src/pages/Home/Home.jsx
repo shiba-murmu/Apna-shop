@@ -1,16 +1,253 @@
-function Home() {
-    // const categories = [
-    //     "Mobiles",
-    //     "Fashion",
-    //     "Electronics",
-    //     "Furniture",
-    //     "Appliances",
-    //     "Used Phones",
-    //     "Accessories",
-    //     "Gaming",
-    // ]
+import MarketplaceSlider from "../../components/common/MarketPlaceSlider"
+import ProductCard from "../../components/common/ProductCard"
+import PosterCard from '../../components/common/PosterCard'
 
-    const products = [
+function Home() {
+
+    const posters = [
+        {
+            id: 1,
+            title: "Trending Fashion Collection",
+            description:
+                "Explore verified fashion products from trusted sellers.",
+            button: "Explore Now",
+            tag: "Fashion",
+            height: "h-[260px] sm:h-[320px] lg:h-[420px]",
+            image:
+                "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1200&auto=format&fit=crop",
+        },
+
+        {
+            id: 2,
+            title: "Verified Used Phones",
+            description:
+                "Second-hand phones inspected before listing.",
+            button: "View Products",
+            tag: "Used Marketplace",
+            height: "h-[220px] sm:h-[280px]",
+            image:
+                "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop",
+        },
+
+        {
+            id: 3,
+            title: "Gaming Accessories",
+            description:
+                "Top gaming products from trusted sellers.",
+            button: "Explore",
+            tag: "Gaming",
+            height: "h-[340px] sm:h-[500px]",
+            image:
+                "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200&auto=format&fit=crop",
+        },
+
+        {
+            id: 4,
+            title: "Home Furniture",
+            description:
+                "Modern furniture collection for your home.",
+            button: "Discover",
+            tag: "Furniture",
+            height: "h-[240px] sm:h-[300px]",
+            image:
+                "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+        },
+    ]
+
+    const featuredProducts = [
+        {
+            id: 1,
+            brand: "MANYAVAR",
+            title: "Men Self Design Linen Straight Kurta",
+            price: "4,749",
+            originalPrice: "4,999",
+            discount: 5,
+            offer: "214",
+            rating: "4.7",
+            reviews: "3",
+            image:
+                "https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=1200&auto=format&fit=crop",
+        },
+
+        {
+            id: 2,
+            brand: "PETER ENGLAND",
+            title: "Men Solid Pure Cotton Kurta",
+            price: "1,499",
+            originalPrice: "1,799",
+            discount: 16,
+            offer: "888",
+            rating: "4",
+            reviews: "135",
+            image:
+                "https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=1200&auto=format&fit=crop",
+        },
+
+        {
+            id: 3,
+            brand: "Snitch",
+            title: "Men Solid Cotton Linen Straight Kurta",
+            price: "1,499",
+            originalPrice: "1,899",
+            discount: 21,
+            offer: "399",
+            rating: "4.6",
+            reviews: "8",
+            image:
+                "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=1200&auto=format&fit=crop",
+        },
+
+        {
+            id: 4,
+            brand: "FORKEY",
+            title: "Women Dupatta Casual Wear",
+            price: "1,279",
+            originalPrice: "2,226",
+            discount: 42,
+            offer: "199",
+            rating: "4.1",
+            reviews: "1352",
+            image:
+                "https://m.media-amazon.com/images/I/51J3ESYGDGL._SY679_.jpg",
+        },
+
+        {
+            id: 5,
+            brand: "JAHANTEXTILE",
+            title: "Pure Cotton Embroidered Kurta",
+            price: "214",
+            originalPrice: "799",
+            discount: 74,
+            offer: "99",
+            rating: "4.3",
+            reviews: "84",
+            image:
+                "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1200&auto=format&fit=crop",
+        },
+
+        {
+            id: 6,
+            brand: "House of Pataudi",
+            title: "Men Embroidered Kurta",
+            price: "1,117",
+            originalPrice: "4,999",
+            discount: 77,
+            offer: "299",
+            rating: "4.5",
+            reviews: "274",
+            image:
+                "https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+            id: 7,
+            brand: "MANYAVAR",
+            title: "Men Self Design Linen Straight Kurta",
+            price: "4,749",
+            originalPrice: "4,999",
+            discount: 5,
+            offer: "214",
+            rating: "4.7",
+            reviews: "3",
+            image:
+                "https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+            id: 8,
+            brand: "PETER ENGLAND",
+            title: "Men Solid Pure Cotton Kurta",
+            price: "1,499",
+            originalPrice: "1,799",
+            discount: 16,
+            offer: "888",
+            rating: "4",
+            reviews: "135",
+            image:
+                "https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+            id: 9,
+            brand: "Snitch",
+            title: "Men Solid Cotton Linen Straight Kurta",
+            price: "1,499",
+            originalPrice: "1,899",
+            discount: 21,
+            offer: "399",
+            rating: "4.6",
+            reviews: "8",
+            image:
+                "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=1200&auto=format&fit=crop",
+        },
+
+        {
+            id: 10,
+            brand: "FORKEY",
+            title: "Women Dupatta Casual Wear",
+            price: "1,279",
+            originalPrice: "2,226",
+            discount: 42,
+            offer: "199",
+            rating: "4.1",
+            reviews: "1352",
+            image:
+                "https://m.media-amazon.com/images/I/51J3ESYGDGL._SY679_.jpg",
+        },
+
+        {
+            id: 11,
+            brand: "JAHANTEXTILE",
+            title: "Pure Cotton Embroidered Kurta",
+            price: "214",
+            originalPrice: "799",
+            discount: 74,
+            offer: "99",
+            rating: "4.3",
+            reviews: "84",
+            image:
+                "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1200&auto=format&fit=crop",
+        },
+
+        {
+            id: 12,
+            brand: "House of Pataudi",
+            title: "Men Embroidered Kurta",
+            price: "1,117",
+            originalPrice: "4,999",
+            discount: 77,
+            offer: "299",
+            rating: "4.5",
+            reviews: "274",
+            image:
+                "https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+            id: 13,
+            brand: "MANYAVAR",
+            title: "Men Self Design Linen Straight Kurta",
+            price: "4,749",
+            originalPrice: "4,999",
+            discount: 5,
+            offer: "214",
+            rating: "4.7",
+            reviews: "3",
+            image:
+                "https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=1200&auto=format&fit=crop",
+        },
+        {
+            id: 14,
+            brand: "PETER ENGLAND",
+            title: "Men Solid Pure Cotton Kurta",
+            price: "1,499",
+            originalPrice: "1,799",
+            discount: 16,
+            offer: "888",
+            rating: "4",
+            reviews: "135",
+            image:
+                "https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=1200&auto=format&fit=crop",
+        },
+    ]
+
+    const quickProducts = [
         {
             id: 1,
             title: "iPhone 14 Pro Max",
@@ -36,14 +273,14 @@ function Home() {
             id: 4,
             title: "Macbook Air",
             image:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUcN-7hdmb95aBDci42BZPPTmCEAw3PDEwwg&s",
+                "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop",
         },
 
         {
             id: 5,
-            title: "Wooden Chair",
+            title: "Gaming Keyboard",
             image:
-                "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=1200&auto=format&fit=crop",
         },
 
         {
@@ -55,206 +292,268 @@ function Home() {
 
         {
             id: 7,
-            title: "Gaming Keyboard",
+            title: "Wooden Chair",
             image:
-                "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=1200&auto=format&fit=crop",
-            },
-            
-            {
-                id: 8,
-            title: "Office Lamp",
-            image:
-                "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
         },
+
         {
-            id: 9,
-            title: "Leather Jacket",
-            image:
-            "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=1200&auto=format&fit=crop",
-        },
-        {
-            id: 10,
-            title: "4K Monitor",
-            image:
-            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop",
-        },
-        {
-            id: 11,
+            id: 8,
             title: "Bluetooth Speaker",
             image:
-                "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1200&auto=format&fit=crop",
         },
-        {
-            id: 12,
-            title: "Running Shoes",
-            image:
-                "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop",
-        }
     ]
 
     return (
         <div className="min-h-screen bg-[#F8FAFC]">
-            {/* Categories */}
+            {/* Marketplace Slider */}
 
-            {/* <section className="border-b border-slate-200 bg-white">
-                <div className="mx-auto flex max-w-7xl items-center gap-6 overflow-x-auto px-4 py-4 scrollbar-none">
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            className="whitespace-nowrap text-sm font-medium text-slate-600 transition hover:text-blue-600"
-                        >
-                            {category}
+            <MarketplaceSlider />
+
+            {/* Quick Marketplace Products */}
+
+            <section className="w-full px-3 py-8 sm:px-4 lg:px-6">
+                <div className="mx-auto max-w-[1600px]">
+                    {/* Heading */}
+
+                    <div className="mb-6 flex items-center justify-between">
+                        <div>
+                            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-blue-600">
+                                Trending Products
+                            </p>
+
+                            <h2 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">
+                                Explore Marketplace
+                            </h2>
+                        </div>
+
+                        <button className="text-sm font-medium text-blue-600">
+                            View All
                         </button>
-                    ))}
+                    </div>
+
+                    {/* Grid */}
+
+                    <div className="grid grid-cols-2 gap-x-3 gap-y-7 sm:grid-cols-3 sm:gap-x-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7">
+                        {quickProducts.map((product) => (
+                            <div
+                                key={product.id}
+                                className="min-w-0 cursor-pointer"
+                            >
+                                {/* Image */}
+
+                                <div className="overflow-hidden rounded-xl bg-[#F1F5F9]">
+                                    <img
+                                        src={product.image}
+                                        alt={product.title}
+                                        className="aspect-[4/5] w-full object-cover transition duration-300 hover:scale-[1.02]"
+                                    />
+                                </div>
+
+                                {/* Info */}
+
+                                <div className="mt-3 px-1">
+                                    <h3 className="line-clamp-1 text-sm font-medium text-slate-800">
+                                        {product.title}
+                                    </h3>
+
+                                    <div className="mt-2 flex items-center gap-2">
+                                        <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+
+                                        <p className="text-xs text-slate-500">
+                                            Verified Seller
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </section> */}
+            </section>
 
             {/* Hero Banner */}
 
-            <section className="mx-auto px-4 py-10 lg:max-w-7xl">
-                <div className="flex items-center justify-between">
-                    <div>
-                        <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue-600">
-                            Trending Products
-                        </p>
+            <section className="w-full px-3 py-4 sm:px-4 lg:px-6">
+                <div className="mx-auto max-w-[1600px]">
+                    <div className="grid gap-4 lg:grid-cols-[2.2fr_1fr]">
+                        {/* Main Banner */}
 
-                        <h2 className="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">
-                            Explore Marketplace
-                        </h2>
-                    </div>
+                        <div className="relative overflow-hidden rounded-2xl bg-slate-900">
+                            <div className="relative w-full overflow-hidden rounded-2xl bg-slate-900">
+                                {/* Background Image */}
 
-                    <button className="text-sm font-medium text-blue-600">
-                        View All
-                    </button>
-                </div>
-
-                {/* Trending Products */}
-                {/* Product Grid */}
-
-                <div className="mt-6 grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-                    {products.map((product) => (
-                        <div
-                            key={product.id}
-                            className="group cursor-pointer"
-                        >
-                            {/* Image */}
-
-                            <div className="overflow-hidden rounded-2xl bg-[#F1F5F9]">
                                 <img
-                                    src={product.image}
-                                    alt={product.title}
-                                    className="aspect-[4/5] w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop"
+                                    alt=""
+                                    className="absolute inset-0 h-full w-full object-cover opacity-40"
                                 />
+
+                                {/* Overlay */}
+
+                                <div className="absolute inset-0 bg-black/30"></div>
+
+                                {/* Content Wrapper */}
+
+                                <div className="relative flex min-h-[320px] items-center sm:min-h-[420px] lg:min-h-[520px]">
+                                    <div className="w-full max-w-3xl px-5 py-10 sm:px-8 lg:px-14">
+                                        {/* Heading */}
+
+                                        <h1 className="text-3xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+                                            Buy products from real sellers.
+                                        </h1>
+
+                                        {/* Description */}
+
+                                        <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-200 sm:text-base lg:text-lg">
+                                            A transparent marketplace where buyers connect directly
+                                            with verified product owners and trusted used-product
+                                            sellers.
+                                        </p>
+
+                                        {/* Buttons */}
+
+                                        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                                            <button className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">
+                                                Explore Marketplace
+                                            </button>
+
+                                            <button className="rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm">
+                                                Sell Product
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Side Cards */}
+
+                        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                            <div className="rounded-2xl bg-blue-600 p-6 text-white">
+                                <p className="text-sm text-blue-100">
+                                    Used Marketplace
+                                </p>
+
+                                <h2 className="mt-3 text-2xl font-bold leading-tight">
+                                    Verified Used Phones
+                                </h2>
+
+                                <p className="mt-4 text-sm leading-7 text-blue-100">
+                                    Every used phone is inspected before listing.
+                                </p>
+
+                                <button className="mt-6 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-blue-700">
+                                    Explore
+                                </button>
                             </div>
 
-                            {/* Info */}
+                            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                                <img
+                                    src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop"
+                                    alt=""
+                                    className="h-44 w-full object-cover"
+                                />
 
-                            <div className="mt-3 px-1">
-                                <h3 className="line-clamp-1 text-sm font-medium text-slate-800">
-                                    {product.title}
-                                </h3>
+                                <div className="p-5">
+                                    <p className="text-xs font-medium uppercase tracking-[0.15em] text-blue-600">
+                                        Trusted Sellers
+                                    </p>
 
-                                <div className="mt-2 flex items-center gap-2">
-                                    <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                                    <h2 className="mt-3 text-xl font-bold leading-tight text-slate-900">
+                                        Real Seller Profiles
+                                    </h2>
 
-                                    <p className="text-xs text-slate-500">
-                                        Verified Seller
+                                    <p className="mt-3 text-sm leading-7 text-slate-500">
+                                        Buyers can verify sellers before purchasing products.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    </div>
                 </div>
             </section>
 
-            <section className="mx-auto px-4 py-4 lg:max-w-7xl">
-                <div className="grid gap-4 lg:grid-cols-[2.2fr_1fr]">
-                    {/* Main Banner */}
+            {/* Featured Fashion Products */}
 
-                    <div className="relative overflow-hidden rounded-2xl bg-slate-900">
-                        <img
-                            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop"
-                            alt=""
-                            className="h-[340px] w-full object-cover opacity-40 sm:h-[420px] lg:h-[520px]"
-                        />
+            <section className="w-full px-3 py-10 sm:px-4 lg:px-6">
+                <div className="mx-auto max-w-[1600px]">
+                    {/* Header */}
 
-                        <div className="absolute inset-0 flex flex-col justify-center p-6 sm:p-10 lg:p-14">
-                            <div className="w-fit rounded-full bg-white/10 px-4 py-2 text-xs font-medium text-white backdrop-blur-sm sm:text-sm">
-                                Trusted Community Marketplace
-                            </div>
-
-                            <h1 className="mt-5 max-w-3xl text-3xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-                                Buy products from real sellers.
-                            </h1>
-
-                            <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-200 sm:text-base lg:text-lg">
-                                A transparent marketplace where buyers connect directly with
-                                verified product owners and trusted used-product sellers.
+                    <div className="mb-6 flex items-center justify-between">
+                        <div>
+                            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-blue-600">
+                                Featured Collection
                             </p>
 
-                            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                                <button className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">
-                                    Explore Marketplace
-                                </button>
-
-                                <button className="rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm">
-                                    Sell Product
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right Side */}
-
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                        <div className="rounded-2xl bg-blue-600 p-6 text-white">
-                            <p className="text-sm text-blue-100">
-                                Used Marketplace
-                            </p>
-
-                            <h2 className="mt-3 text-2xl font-bold leading-tight">
-                                Verified Used Phones
+                            <h2 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">
+                                Fashion Marketplace
                             </h2>
-
-                            <p className="mt-4 text-sm leading-7 text-blue-100">
-                                Every used phone is inspected before listing.
-                            </p>
-
-                            <button className="mt-6 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-blue-700">
-                                Explore
-                            </button>
                         </div>
 
-                        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-                            <img
-                                src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop"
-                                alt=""
-                                className="h-44 w-full object-cover"
-                            />
+                        <button className="text-sm font-medium text-blue-600">
+                            View All
+                        </button>
+                    </div>
 
-                            <div className="p-5">
-                                <p className="text-xs font-medium uppercase tracking-[0.15em] text-blue-600">
-                                    Trusted Sellers
-                                </p>
+                    {/* Product Cards */}
 
-                                <h2 className="mt-3 text-xl font-bold leading-tight text-slate-900">
-                                    Real Seller Profiles
-                                </h2>
-
-                                <p className="mt-3 text-sm leading-7 text-slate-500">
-                                    Buyers can verify sellers before purchasing products.
-                                </p>
+                    <div className="grid grid-cols-2 gap-x-3 gap-y-7 sm:grid-cols-3 sm:gap-x-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                        {featuredProducts.map((product) => (
+                            <div
+                                key={product.id}
+                                className="min-w-0"
+                            >
+                                <ProductCard product={product} />
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
+            {/* Poster */}
+            <section className="w-full px-3 py-8 sm:px-4 lg:px-6">
+                <div className="mx-auto max-w-[1600px]">
+                    {/* Header */}
+
+                    <div className="mb-6">
+                        <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-blue-600">
+                            Marketplace Posters
+                        </p>
+
+                        <h2 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">
+                            Explore Categories
+                        </h2>
+                    </div>
+
+                    {/* Masonry Grid */}
+
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        {/* Large Poster */}
+
+                        <div className="lg:col-span-2">
+                            <PosterCard poster={posters[0]} />
+                        </div>
+
+                        {/* Small Posters */}
+
+                        <PosterCard poster={posters[1]} />
+
+                        <PosterCard poster={posters[2]} />
+
+                        {/* Bottom Wide */}
+
+                        <div className="sm:col-span-2 lg:col-span-4">
+                            <PosterCard poster={posters[3]} />
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* Marketplace Banner */}
 
-            <section className="mx-auto px-4 py-4 lg:max-w-7xl">
-                <div className="overflow-hidden rounded-2xl bg-white">
+            <section className="w-full px-3 py-4 sm:px-4 lg:px-6">
+                <div className="mx-auto max-w-[1600px] overflow-hidden rounded-2xl bg-white">
                     <div className="grid items-center lg:grid-cols-2">
                         {/* Left */}
 
@@ -303,54 +602,60 @@ function Home() {
                 </div>
             </section>
 
-            {/* Local Sellers */}
+            {/* Sellers */}
 
-            <section className="mx-auto px-4 py-10 lg:max-w-7xl">
-                <div className="flex items-center justify-between">
-                    <div>
-                        <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue-600">
-                            Verified Sellers
-                        </p>
+            <section className="w-full px-3 py-10 sm:px-4 lg:px-6">
+                <div className="mx-auto max-w-[1600px]">
+                    {/* Header */}
 
-                        <h2 className="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">
-                            Local Marketplace Sellers
-                        </h2>
-                    </div>
-
-                    <button className="text-sm font-medium text-blue-600">
-                        View All
-                    </button>
-                </div>
-
-                <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
-                    {[1, 2, 3, 4, 5].map((seller) => (
-                        <div
-                            key={seller}
-                            className="rounded-2xl bg-white p-4"
-                        >
-                            <img
-                                src={`https://i.pravatar.cc/300?img=${seller + 10}`}
-                                alt=""
-                                className="h-20 w-20 rounded-2xl object-cover"
-                            />
-
-                            <h3 className="mt-4 text-sm font-semibold text-slate-900">
-                                Rahul Electronics
-                            </h3>
-
-                            <p className="mt-1 text-xs text-slate-500">
-                                Jamshedpur
+                    <div className="mb-6 flex items-center justify-between">
+                        <div>
+                            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-blue-600">
+                                Verified Sellers
                             </p>
 
-                            <div className="mt-3 flex items-center gap-2">
-                                <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
-
-                                <p className="text-xs text-slate-500">
-                                    Verified Seller
-                                </p>
-                            </div>
+                            <h2 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">
+                                Local Marketplace Sellers
+                            </h2>
                         </div>
-                    ))}
+
+                        <button className="text-sm font-medium text-blue-600">
+                            View All
+                        </button>
+                    </div>
+
+                    {/* Sellers Grid */}
+
+                    <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+                        {[1, 2, 3, 4, 5, 6].map((seller) => (
+                            <div
+                                key={seller}
+                                className="rounded-2xl bg-white p-4"
+                            >
+                                <img
+                                    src={`https://i.pravatar.cc/300?img=${seller + 10}`}
+                                    alt=""
+                                    className="h-20 w-20 rounded-2xl object-cover"
+                                />
+
+                                <h3 className="mt-4 line-clamp-1 text-sm font-semibold text-slate-900">
+                                    Rahul Electronics
+                                </h3>
+
+                                <p className="mt-1 text-xs text-slate-500">
+                                    Jamshedpur
+                                </p>
+
+                                <div className="mt-3 flex items-center gap-2">
+                                    <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+
+                                    <p className="text-xs text-slate-500">
+                                        Verified Seller
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
         </div>
